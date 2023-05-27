@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="view_model"
+            type="com.example.mycalculator.presentation.MainActivityViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.MainActivity">
+
+        <LinearLayout
+            android:id="@+id/color_picker_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/txt_calculations"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/color_picker"
+                android:tag="red">
+
+                <ImageView style="@style/check_mark_style" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/color_picker"
+                android:tag="purple"
+                app:cardBackgroundColor="@color/purple">
+
+                <ImageView style="@style/check_mark_style" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/color_picker"
+                android:tag="blue"
+                app:cardBackgroundColor="@color/blue">
+
+                <ImageView style="@style/check_mark_style" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/color_picker"
+                android:tag="green"
+                app:cardBackgroundColor="@color/green">
+
+                <ImageView style="@style/check_mark_style" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/color_picker"
+                android:tag="orange"
+                app:cardBackgroundColor="@color/orange">
+
+                <ImageView style="@style/check_mark_style" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/color_picker"
+                android:tag="black"
+                app:cardBackgroundColor="@color/black">
+
+                <ImageView
+                    style="@style/check_mark_style"
+                    android:visibility="visible" />
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_calculations"
+            style="@style/text_calculations"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{view_model.calculationsData}"
+            android:textAlignment="viewEnd"
+            android:textSize="25sp"
+            android:maxLines="1"
+            android:ellipsize="start"
+            app:layout_constraintBottom_toTopOf="@+id/txt_result"
+            app:layout_constraintEnd_toEndOf="@+id/txt_result"
+            app:layout_constraintStart_toStartOf="@+id/txt_result" />
+
+        <TextView
+            android:id="@+id/txt_result"
+            style="@style/text_result"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="3dp"
+            android:text="@{view_model.resultData}"
+            android:textAlignment="viewEnd"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@+id/view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <View
+            android:id="@+id/view"
+            style="@style/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="3dp"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/linearLayout3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/digit_btn_land"
+                    android:text="7" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/digit_btn_land"
+                    android:text="8" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/digit_btn_land"
+                    android:text="9" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/digit_btn_land"
+                    android:text="4" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/digit_btn_land"
+                    android:text="5" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/digit_btn_land"
+                    android:text="6" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/digit_btn_land"
+                    android:text="1" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/digit_btn_land"
+                    android:text="2" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/digit_btn_land"
+                    android:text="3" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/digit_btn_land"
+                    android:text="0"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/digit_btn_land"
+                    android:text="." />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/back_space_btn_land"
+                    app:icon="@drawable/ic_baseline_backspace_24" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+            app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    style="@style/text_button_land"
+                    android:text="RAD" />
+
+                <Button
+                    style="@style/text_button_land"
+                    android:text="√" />
+
+                <Button
+                    style="@style/text_button_land"
+                    android:text="π" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    style="@style/text_button_land"
+                    android:text="INV" />
+
+                <Button
+                    style="@style/text_button_land"
+                    android:text="^" />
+
+                <Button
+                    style="@style/text_button_land"
+                    android:text="!" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    style="@style/text_button_land"
+                    android:text="sin" />
+
+                <Button
+                    style="@style/text_button_land"
+                    android:text="con" />
+
+                <Button
+                    style="@style/text_button_land"
+                    android:text="tan" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    style="@style/text_button_land"
+                    android:text="e" />
+
+                <Button
+                    style="@style/text_button_land"
+                    android:text="ln" />
+
+                <Button
+                    style="@style/text_button_land"
+                    android:text="log" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/operator_btn_land"
+                    android:text="/" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/operator_btn_land"
+                    android:tag="clear_btn"
+                    android:text="C" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/operator_btn_land"
+                    android:text="*" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/operator_btn_land"
+                    android:tag="all_clear_btn"
+                    android:text="AC" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/operator_btn_land"
+                    android:text="-" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/operator_btn_land"
+                    android:text="%" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/operator_btn_land"
+                    android:text="+" />
+
+                <com.google.android.material.button.MaterialButton
+                    style="@style/equal_to_btn_land"
+                    android:text="=" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
