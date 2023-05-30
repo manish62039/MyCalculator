@@ -119,4 +119,5 @@
         <item name="android:tag">special_operator_btn</item>
         <item name="android:onClick">onButtonClick</item>
     </style>
+
 </resources>

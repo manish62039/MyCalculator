@@ -134,6 +134,7 @@
 
                 <com.google.android.material.button.MaterialButton
                     style="@style/back_space_btn"
+                    android:id="@+id/back_btn"
                     app:icon="@drawable/ic_baseline_backspace_24" />
 
                 <com.google.android.material.button.MaterialButton
