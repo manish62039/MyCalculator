@@ -6,7 +6,7 @@ Multi theme calculator app.
 
 ## Features
 
-- Sooth UI
+- Smooth UI
 - Change UI in just one click
 - Calculations are also exact 
 
