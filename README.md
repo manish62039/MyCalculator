@@ -1,7 +1,7 @@
 
 # Calculator App
 
-Mutlti theme calculator app.
+Multi theme calculator app.
 
 
 ## Features
